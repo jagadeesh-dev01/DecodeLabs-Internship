@@ -1,0 +1,364 @@
+I totally get it—sometimes those image links can be incredibly stubborn or just
+not capture the right vibe for a premium menu. I've swapped out the Matcha Latte
+image for a completely fresh, highly reliable link that shows a beautiful,
+bright green matcha with classic latte art. It perfectly fits the aesthetic of
+the rest of the menu. Here is your final, complete `index.html`. Just press `Cmd
++ A` to select your current HTML, delete it, and paste this entire block. Your
+10-item interactive menu is ready to submit! ```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brew Haven | Premium Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="navbar">
+      <nav class="nav-container">
+        <a href="#home" class="logo">Brew<span>Haven.</span></a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#" id="cart-nav-btn">Cart (0)</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Digital Craftsmanship <br />Meets Perfect Roasts</h1>
+          <p>
+            Experience the finest beans sourced globally, brewed locally.
+            Designed for the modern aesthetic.
+          </p>
+          <a href="#menu" class="btn-primary">Explore The Menu</a>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-section">
+        <div class="section-header">
+          <h2>Curated Selections</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="grid-container">
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80"
+              alt="Mocha Mousse Latte"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Mocha Mousse Latte</h3>
+              <p>
+                Rich espresso blended with steamed milk and a touch of dark
+                chocolate.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Mocha Mousse Latte"
+                data-price="350"
+              >
+                <span class="price">₹350</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80"
+              alt="Ethereal Cold Brew"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Ethereal Cold Brew</h3>
+              <p>
+                Slow-steeped for 18 hours yielding a smooth, highly caffeinated
+                finish.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Ethereal Cold Brew"
+                data-price="280"
+              >
+                <span class="price">₹280</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+              alt="Pour Over"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Artisan Pour Over</h3>
+              <p>
+                Single-origin beans precisely brewed for maximum flavor clarity.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Artisan Pour Over"
+                data-price="400"
+              >
+                <span class="price">₹400</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80"
+              alt="Classic Cappuccino"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Classic Cappuccino</h3>
+              <p>
+                Equal parts espresso, steamed milk, and a thick layer of
+                micro-foam.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Classic Cappuccino"
+                data-price="250"
+              >
+                <span class="price">₹250</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=600&q=80"
+              alt="Vanilla Macchiato"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Vanilla Macchiato</h3>
+              <p>
+                Fresh milk marked with espresso and our house-made vanilla bean
+                syrup.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Vanilla Macchiato"
+                data-price="320"
+              >
+                <span class="price">₹320</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?auto=format&fit=crop&w=600&q=80"
+              alt="Hazelnut Cortado"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Hazelnut Cortado</h3>
+              <p>
+                A bold double shot of espresso cut with warm, hazelnut-infused
+                milk.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Hazelnut Cortado"
+                data-price="290"
+              >
+                <span class="price">₹290</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80"
+              alt="Iced Caramel Frappe"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Iced Caramel Frappe</h3>
+              <p>
+                Blended ice, espresso, and rich caramel drizzled with whipped
+                cream.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Iced Caramel Frappe"
+                data-price="380"
+              >
+                <span class="price">₹380</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80"
+              alt="Nitro Cold Brew"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Nitro Cold Brew</h3>
+              <p>
+                Our classic cold brew infused with nitrogen for a creamy,
+                stout-like effect.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Nitro Cold Brew"
+                data-price="420"
+              >
+                <span class="price">₹420</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80"
+              alt="Signature Flat White"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Signature Flat White</h3>
+              <p>
+                Velvety steamed milk poured over a concentrated ristretto shot.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Signature Flat White"
+                data-price="300"
+              >
+                <span class="price">₹300</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="coffee-card">
+            <img
+              src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=600&q=80"
+              alt="Matcha Latte"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Matcha Green Tea Latte</h3>
+              <p>
+                Ceremonial grade matcha blended with lightly sweetened steamed
+                milk.
+              </p>
+              <div
+                class="card-footer"
+                data-name="Matcha Green Tea Latte"
+                data-price="360"
+              >
+                <span class="price">₹360</span>
+                <button class="btn-secondary add-btn">Add</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-content">
+          <h2>Our Story</h2>
+          <div class="divider"></div>
+          <p>
+            Born in the vibrant heart of Hyderabad, Brew Haven started with a
+            simple vision: to engineer the perfect coffee experience. We believe
+            that crafting a great cup of coffee requires the same precision and
+            passion as writing clean, beautiful code.
+          </p>
+          <p>
+            Every bean is ethically sourced from top-tier estates and roasted
+            meticulously to bring out its unique flavor profile. Whether you are
+            a developer seeking a late-night caffeine boost or someone looking
+            for a quiet afternoon escape, our space is designed for you. Welcome
+            to your new haven.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-content">
+        <span class="close-cart">&times;</span>
+        <h2>Your Order</h2>
+        <div class="divider"></div>
+        <ul id="cart-items-list">
+          <li class="empty-msg">Your cart is empty.</li>
+        </ul>
+        <div class="cart-summary">
+          <h3>
+            Total:
+            <span class="price">₹<span id="cart-total-price">0</span></span>
+          </h3>
+          <div class="checkout-options">
+            <button
+              class="btn-primary"
+              onclick="alert('Redirecting to secure payment gateway...')"
+            >
+              Pay Online
+            </button>
+            <button
+              class="btn-primary outline"
+              onclick="alert('Order placed! Pay at counter.')"
+            >
+              Pay Cash
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Brew<span>Haven.</span></h3>
+          <p>
+            Architecting the perfect digital and brewing experience, one cup at
+            a time.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><strong>Help Desk:</strong> +91 7842561564</p>
+          <p><strong>Email:</strong> support@brewhaven.in</p>
+          <p><strong>Location:</strong> Jubilee Hills, Hyderabad, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Brew Haven. Powered by DecodeLabs Internship.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+```

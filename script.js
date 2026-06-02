@@ -171,10 +171,21 @@ async function fetchAndDisplayCoffees() {
                     <h3>${coffee.name}</h3>
                     <p>${coffee.description}</p>
                     <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Category: ${coffee.category}</p>
-                    <div class="card-footer">
-                        <span class="price">₹${coffee.price}</span>
-                        <button onclick="deleteCoffee('${coffee._id}')" class="btn-secondary" style="background: #dc3545; color: white; border: none;">Delete</button>
-                    </div>
+                    <div class="card-footer"
+     data-name="${coffee.name}"
+     data-price="${coffee.price}">
+    <span class="price">₹${coffee.price}</span>
+    <button class="btn-secondary add-btn">Add</button>
+</div>
+
+<div style="margin-top:10px;">
+    <button
+        onclick="deleteCoffee('${coffee._id}')"
+        class="btn-secondary"
+        style="background:#dc3545;color:white;border:none;width:100%;">
+        Delete
+    </button>
+</div>
                 </div>
             `;
             menuContainer.appendChild(card);

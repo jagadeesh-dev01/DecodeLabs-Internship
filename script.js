@@ -139,3 +139,108 @@ window.addEventListener('click', (e) => {
         cartModal.classList.remove('show');
     }
 });
+// ==========================================
+// FULL STACK INTEGRATION LOGIC
+// ==========================================
+const API_URL = 'http://localhost:3000/api/coffees';
+const menuContainer = document.getElementById('dynamic-menu');
+const coffeeForm = document.getElementById('coffeeForm');
+
+// 1. READ: Fetch data from backend and display it
+async function fetchAndDisplayCoffees() {
+    try {
+        const response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const coffees = await response.json();
+        
+        // Clear the container before adding new items
+        menuContainer.innerHTML = '';
+        
+        // Loop through database items and create HTML cards
+        coffees.forEach(coffee => {
+            const card = document.createElement('article');
+            card.className = 'coffee-card';
+            
+            card.innerHTML = `
+                <img src="${coffee.image || 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80'}" alt="${coffee.name}" class="card-img" />
+                <div class="card-content">
+                    <h3>${coffee.name}</h3>
+                    <p>${coffee.description}</p>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Category: ${coffee.category}</p>
+                    <div class="card-footer">
+                        <span class="price">₹${coffee.price}</span>
+                        <button onclick="deleteCoffee('${coffee._id}')" class="btn-secondary" style="background: #dc3545; color: white; border: none;">Delete</button>
+                    </div>
+                </div>
+            `;
+            menuContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Error fetching coffees:", error);
+        menuContainer.innerHTML = `<p style="text-align:center; color:red; grid-column: 1 / -1;">Failed to connect to the database. Is your Node.js backend running?</p>`;
+    }
+}
+
+// 2. CREATE: Send new coffee to the database
+if (coffeeForm) {
+    coffeeForm.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevent page refresh
+
+        const newCoffee = {
+            name: document.getElementById('name').value,
+            price: Number(document.getElementById('price').value),
+            description: document.getElementById('description').value,
+            category: document.getElementById('category').value,
+            image: document.getElementById('image').value
+        };
+
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newCoffee)
+            });
+
+            if (response.status === 201) {
+                coffeeForm.reset(); // Clear the inputs
+                fetchAndDisplayCoffees(); // Refresh the live menu
+            } else {
+                throw new Error('Failed to create coffee');
+            }
+        } catch (error) {
+            console.error("Error adding coffee:", error);
+            alert("Could not add coffee. Make sure the backend is running.");
+        }
+    });
+}
+
+// 3. DELETE: Remove a coffee from the database
+window.deleteCoffee = async function(id) {
+    const confirmDelete = confirm("Are you sure you want to permanently delete this coffee from the database?");
+    if (!confirmDelete) return;
+
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            fetchAndDisplayCoffees(); // Refresh the live menu to remove the card
+        } else {
+            throw new Error('Failed to delete coffee');
+        }
+    } catch (error) {
+        console.error("Error deleting coffee:", error);
+        alert("Could not delete the item.");
+    }
+};
+
+// Run the fetch function as soon as the page loads
+fetchAndDisplayCoffees();

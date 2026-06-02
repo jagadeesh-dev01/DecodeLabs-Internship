@@ -1,10 +1,3 @@
-I totally get it—sometimes those image links can be incredibly stubborn or just
-not capture the right vibe for a premium menu. I've swapped out the Matcha Latte
-image for a completely fresh, highly reliable link that shows a beautiful,
-bright green matcha with classic latte art. It perfectly fits the aesthetic of
-the rest of the menu. Here is your final, complete `index.html`. Just press `Cmd
-+ A` to select your current HTML, delete it, and paste this entire block. Your
-10-item interactive menu is ready to submit! ```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,239 +42,73 @@ the rest of the menu. Here is your final, complete `index.html`. Just press `Cmd
 
       <section id="menu" class="menu-section">
         <div class="section-header">
-          <h2>Curated Selections</h2>
+          <h2>Live Database Menu</h2>
           <div class="divider"></div>
         </div>
 
-        <div class="grid-container">
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80"
-              alt="Mocha Mousse Latte"
-              class="card-img"
+        <div
+          class="admin-panel"
+          style="
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+          "
+        >
+          <h3 style="margin-bottom: 15px; text-align: center">
+            Add New Coffee
+          </h3>
+          <form
+            id="coffeeForm"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: center;
+            "
+          >
+            <input
+              type="text"
+              id="name"
+              placeholder="Coffee Name"
+              required
+              style="padding: 10px; flex: 1 1 200px"
             />
-            <div class="card-content">
-              <h3>Mocha Mousse Latte</h3>
-              <p>
-                Rich espresso blended with steamed milk and a touch of dark
-                chocolate.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Mocha Mousse Latte"
-                data-price="350"
-              >
-                <span class="price">₹350</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80"
-              alt="Ethereal Cold Brew"
-              class="card-img"
+            <input
+              type="number"
+              id="price"
+              placeholder="Price (₹)"
+              required
+              style="padding: 10px; flex: 1 1 100px"
             />
-            <div class="card-content">
-              <h3>Ethereal Cold Brew</h3>
-              <p>
-                Slow-steeped for 18 hours yielding a smooth, highly caffeinated
-                finish.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Ethereal Cold Brew"
-                data-price="280"
-              >
-                <span class="price">₹280</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
-              alt="Pour Over"
-              class="card-img"
+            <input
+              type="text"
+              id="description"
+              placeholder="Description"
+              required
+              style="padding: 10px; flex: 1 1 300px"
             />
-            <div class="card-content">
-              <h3>Artisan Pour Over</h3>
-              <p>
-                Single-origin beans precisely brewed for maximum flavor clarity.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Artisan Pour Over"
-                data-price="400"
-              >
-                <span class="price">₹400</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80"
-              alt="Classic Cappuccino"
-              class="card-img"
+            <input
+              type="text"
+              id="category"
+              placeholder="Category"
+              required
+              style="padding: 10px; flex: 1 1 150px"
             />
-            <div class="card-content">
-              <h3>Classic Cappuccino</h3>
-              <p>
-                Equal parts espresso, steamed milk, and a thick layer of
-                micro-foam.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Classic Cappuccino"
-                data-price="250"
-              >
-                <span class="price">₹250</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=600&q=80"
-              alt="Vanilla Macchiato"
-              class="card-img"
+            <input
+              type="url"
+              id="image"
+              placeholder="Image URL (Optional)"
+              style="padding: 10px; flex: 1 1 200px"
             />
-            <div class="card-content">
-              <h3>Vanilla Macchiato</h3>
-              <p>
-                Fresh milk marked with espresso and our house-made vanilla bean
-                syrup.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Vanilla Macchiato"
-                data-price="320"
-              >
-                <span class="price">₹320</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?auto=format&fit=crop&w=600&q=80"
-              alt="Hazelnut Cortado"
-              class="card-img"
-            />
-            <div class="card-content">
-              <h3>Hazelnut Cortado</h3>
-              <p>
-                A bold double shot of espresso cut with warm, hazelnut-infused
-                milk.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Hazelnut Cortado"
-                data-price="290"
-              >
-                <span class="price">₹290</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80"
-              alt="Iced Caramel Frappe"
-              class="card-img"
-            />
-            <div class="card-content">
-              <h3>Iced Caramel Frappe</h3>
-              <p>
-                Blended ice, espresso, and rich caramel drizzled with whipped
-                cream.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Iced Caramel Frappe"
-                data-price="380"
-              >
-                <span class="price">₹380</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80"
-              alt="Nitro Cold Brew"
-              class="card-img"
-            />
-            <div class="card-content">
-              <h3>Nitro Cold Brew</h3>
-              <p>
-                Our classic cold brew infused with nitrogen for a creamy,
-                stout-like effect.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Nitro Cold Brew"
-                data-price="420"
-              >
-                <span class="price">₹420</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80"
-              alt="Signature Flat White"
-              class="card-img"
-            />
-            <div class="card-content">
-              <h3>Signature Flat White</h3>
-              <p>
-                Velvety steamed milk poured over a concentrated ristretto shot.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Signature Flat White"
-                data-price="300"
-              >
-                <span class="price">₹300</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="coffee-card">
-            <img
-              src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=600&q=80"
-              alt="Matcha Latte"
-              class="card-img"
-            />
-            <div class="card-content">
-              <h3>Matcha Green Tea Latte</h3>
-              <p>
-                Ceremonial grade matcha blended with lightly sweetened steamed
-                milk.
-              </p>
-              <div
-                class="card-footer"
-                data-name="Matcha Green Tea Latte"
-                data-price="360"
-              >
-                <span class="price">₹360</span>
-                <button class="btn-secondary add-btn">Add</button>
-              </div>
-            </div>
-          </article>
+            <button type="submit" class="btn-primary" style="flex: 1 1 150px">
+              Submit to Database
+            </button>
+          </form>
         </div>
+
+        <div class="grid-container" id="dynamic-menu"></div>
       </section>
 
       <section id="about" class="about-section">
@@ -360,5 +187,3 @@ the rest of the menu. Here is your final, complete `index.html`. Just press `Cmd
     <script src="script.js"></script>
   </body>
 </html>
-
-```
